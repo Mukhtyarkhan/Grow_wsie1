@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    plant_information
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='Assets/styles/plant_information.css') }}">
+{% endblock %}
+
+{% block content %}
+<section>
+<div style="width: 100%;">
+    <h1>Plant Information Search</h1>
+    <form action="/plant_information" method="post">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search any plant" name="searchInput">
+            <button id="searchButton">🔍</button>
+        </div>
+    </form>    
+</div>
+<<<<<<< HEAD
+<div class="info">
+=======
+
+<div class="plant_info">
+>>>>>>> 4199c3d1252f90ed20901673469675ac452755e7
+    {% if data %}
+    <ul class="icon-list">
+        <li id="name"> <strong>Plant Name: </strong> {{ data.name }}</li>
+        <li id="scientific"><strong>Scientific Name:</strong> {{ data.scientific_name }}</li>
+        <li id="family"><strong>Family Name:</strong> {{ data.family_name }}</li>
+        <li id="planting"><strong>Planting Requirements:</strong> {{ data.planting_requirements }}</li>
+        <li id="diseases"><strong>Diseases Susceptibility:</strong> {{ data.diseases_susceptibility }}</li>
+    </ul>
+    {% endif %}
+</div>
+
+</section>
+{% endblock %}

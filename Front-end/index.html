@@ -1,0 +1,258 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Grow Wise
+{% endblock %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='Assets/scripts/script.js') }}" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='Assets/styles/style.css') }}">
+{% endblock %}
+
+{%block content %}
+<section class="swiper carousel">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide" style="background: url({{ url_for('static', filename = 'Assets/images/slider-img/slider-img-1.jpg') }}) no-repeat">
+        </div>
+        <div class="swiper-slide slide" style="background: url({{ url_for('static', filename = 'Assets/images/slider-img/slider-img-2.jpg') }}) no-repeat">
+        </div>
+        <div class="swiper-slide slide" style="background: url({{ url_for('static', filename = 'Assets/images/slider-img/slider-img-3.jpg') }}) no-repeat">
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
+
+<!-- Services Section -->
+<section class="services container">
+    <h1 class="heading"><span>Our Services</span></h1>
+    <div class="row">
+        <div class="col">
+            <div class="card" style="background-image: url({{ url_for('static', filename = 'Assets/images/card-img/card-img-1.jpg')}});">
+                <div class="card-content">
+                    <h2 class="card-title">Crop recommendation </h2>
+                    <p class="card-body">Input your soil and environmental data to receive personalized crop
+                        suggestions.</p>
+                    <a href="{{url_for('crop_recommender')}}" class="button">Get Recommendation</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-image: url({{ url_for('static', filename = 'Assets/images/card-img/card-img-2.png')}});">
+                <div class="card-content">
+                    <h2 class="card-title">Information Search</h2>
+                    <p class="card-body">Access plant growth conditions, disease info, and prevention methods.</p>
+                    <a href="{{ url_for('plant_information')}}" class="button">Search Information</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-image: url({{ url_for('static', filename = 'Assets/images/card-img/card-img-3.jpg')}});">
+                <div class="card-content">
+                    <h2 class="card-title">Disease Identifier </h2>
+                    <p class="card-body">Accurately identify plant diseases from your images and suggest effective
+                        treatments.</p>
+                    <a href="{{ url_for('disease_identification')}}" class="button">Identify Disease</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tutorial Section -->
+<section class="tutorial container">
+    <h1 class="heading"><span>Tutorial</span></h1>
+    <div class="row">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/x77ROC-mQiM?si=lebw9lVlET76fqd6"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen style="border-radius: 1em;"></iframe>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonials">
+    <h1 class="heading"><span>What our clients say about us</span></h1>
+    <div class="container">
+        <div class="testimonials-content">
+            <div class="swiper testimonials-slider testimonials-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                            <img src="{{ url_for('static', filename = 'Assets/images/testi-img/testi-img-1.jpg')}}" alt="profile photo">
+                            <div class="text-box">
+                                <h3 class="name">Ali Ahmed</h3>
+                                <span class="job">Farmer</span>
+                            </div>
+                        </div>
+                        <p>As a farmer, this platform has been a game-changer. The plant recommendations are
+                            spot-on, and the disease identifier saved my crops. </p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                            <img src="{{ url_for('static', filename = 'Assets/images/testi-img/testi-img-2.jpg')}}" alt="profile photo">
+                            <div class="text-box">
+                                <h3 class="name">Farhan Khan</h3>
+                                <span class="job">Agronomist</span>
+                            </div>
+                        </div>
+                        <p>In my line of work, accurate information is crucial. This service not only provides
+                            detailed plant information but also makes the search process seamless. A valuable tool
+                            for agronomists.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                            <img src="{{ url_for('static', filename = 'Assets/images/testi-img/testi-img-3.jpg')}}" alt="profile photo">
+                            <div class="text-box">
+                                <h3 class="name">Sara Rehman</h3>
+                                <span class="job">Environmental Scientist</span>
+                            </div>
+                        </div>
+                        <p>The disease identifier is a lifesaver for my research. This platform has become an
+                            essential tool in my work as an
+                            environmental scientist.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                            <img src="{{ url_for('static', filename = 'Assets/images/testi-img/testi-img-4.jpg')}}" alt="profile photo">
+                            <div class="text-box">
+                                <h3 class="name">Hassan Ali</h3>
+                                <span class="job">Horticulturist</span>
+                            </div>
+                        </div>
+                        <p>Impressed with the variety of plant recommendations. As a horticulturist, I appreciate
+                            the attention to detail. The platform has become an integral part of my work.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                            <img src="{{ url_for('static', filename = 'Assets/images/testi-img/testi-img-5.jpg')}}" alt="profile photo">
+                            <div class="text-box">
+                                <h3 class="name">Aisha Malik</h3>
+                                <span class="job">Gardener</span>
+                            </div>
+                        </div>
+                        <p>Being a gardener, I rely on accurate plant info. This website not only educates but also
+                            simplifies the process. A must-visit for anyone passionate about gardening!</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination testimonials-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faqs container">
+    <h1 class="heading"><span>FAQs</span></h1>
+    <div class="faq-wrapper">
+        <div class="faq">
+            <div class="question">
+                <h3>What is Grow Wise?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" fill=white stroke=#6a3a1d stroke-width="7" stroke-linecap="round" />
+                </svg>
+
+            </div>
+            <div class="answer">
+                <p>Grow Wise is an agricultural companion that combines the power of AI with a
+                    user-friendly interface to assist farmers in disease identification, crop recommendation, and
+                    smart
+                    farming practices.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>How does Grow Wise identify crop diseases?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" fill=white stroke=#6a3a1d stroke-width="7" stroke-linecap="round" />
+                </svg>
+
+            </div>
+            <div class="answer">
+                <p>We utilize advanced image processing and machine learning algorithms to analyze images of crop
+                    leaves. The system identifies diseases by examining patterns and symptoms in these images.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>Can I use Grow Wise for multiple crops?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" fill=white stroke=#6a3a1d stroke-width="7" stroke-linecap="round" />
+                </svg>
+
+            </div>
+            <div class="answer">
+                <p>Absolutely! Grow Wise supports a variety of crops, including cotton, corn, wheat, rice, and
+                    soybeans.
+                    You can access disease identification and crop recommendations for a wide range of crops.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>What are the benefits of using Grow Wise?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" fill=white stroke=#6a3a1d stroke-width="7" stroke-linecap="round" />
+                </svg>
+
+            </div>
+            <div class="answer">
+                <p>By using Grow Wise, you can achieve more accurate disease identification, receive personalized
+                    crop
+                    recommendations, and access valuable information on pests, diseases, and treatments. It's all
+                    about
+                    improving your farming outcomes.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>Is Grow Wise easy to use?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" fill=white stroke=#6a3a1d stroke-width="7" stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Yes, we've designed our platform with user-friendliness in mind. Just upload an image, and the
+                    system
+                    does the rest. No need for advanced technical skills.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
